@@ -2,6 +2,8 @@ package tudelft.countletters;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 public class CountLettersTest {
 
@@ -17,4 +19,16 @@ public class CountLettersTest {
         Assertions.assertEquals(1, words);
     }
 
+    @ParameterizedTest(name = "TestString={0} ,ExpectedCount={1}")
+    @CsvSource({"cats|dogs,2","car|bar,2"})
+    public void ParammultipleMatchingWords(String TestString, int ExpectedCount){
+        int words = new CountLetters().count(TestString);
+        Assertions.assertEquals(ExpectedCount, words);
+    }
+    @Test
+    public void NoWordMatch() {
+        int words = new CountLetters().count("cat|dog");
+        Assertions.assertEquals(0, words);
+    }
 }
+
