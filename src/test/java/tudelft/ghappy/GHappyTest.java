@@ -13,13 +13,13 @@ public class GHappyTest {
         Assertions.assertTrue(result);
     }
     @ParameterizedTest(name = "TestString={0}")
-    @CsvSource({"agga", "cakiggmmgg"})
+    @CsvSource({"agga", "cakiggmmgg","xxggxx"})
     public void isHappyG (String str){
         boolean result = new GHappy().gHappy(str);
         Assertions.assertTrue(result);
     }
     @ParameterizedTest(name = "TestString={0}")
-    @CsvSource({"ascgjkrgfpd", "aaagaaaaagaaaa"})
+    @CsvSource({"ascgjkrgfpd", "aaagaaaaagaaaa","xxgxx"})
     public void isNotHappyG (String str){
         boolean result = new GHappy().gHappy(str);
         Assertions.assertFalse(result);
