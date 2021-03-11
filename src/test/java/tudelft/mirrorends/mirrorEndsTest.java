@@ -28,6 +28,6 @@ public class mirrorEndsTest {
     @Test
     public void evenCharMirror() {
         String mirror = new mirrorEnds().mirrorEnds("abccba");
-        Assertions.assertEquals("abc", mirror);
+        Assertions.assertEquals("abccba", mirror);
     }
 }

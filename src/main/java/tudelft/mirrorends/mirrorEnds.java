@@ -13,6 +13,9 @@ public class mirrorEnds {
                 break;
             }
         }
+        if(begin == end || mirror.length()>=end+1){
+            return string;
+        }
         return begin == end ? string : mirror;
     }
 }
